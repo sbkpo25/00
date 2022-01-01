@@ -1,0 +1,73 @@
+from tkinter import *
+
+window=Tk()
+window.title('Label應用')
+window.geometry('280x230')
+
+label=Label(window,text='Label應用',
+            width=15,
+            heigh=3,
+            font=('Time New Roman',10,'bold'),
+            anchor="se",
+            fg='blue',bg='yellow')
+label.grid(column=0,row=0,columnspan=3,padx=10,pady=10)
+
+label_2=Label(window,text="bitmap",bg='yellow',
+              bitmap='question',    #使用點陣圖
+              compound="left")      #使用compound控制圖與文字的相對位置
+label_2.grid(column=3,row=0,columnspan=3,padx=10,pady=10)
+
+
+label_3=Label(window,text='justify應用999555444333',width=10,heigh=5,font=('Time New Roman',10,'bold'),fg='blue',bg='yellow',
+              wraplength=50,        #50像素後自動換行
+              justify='left')       #最後一行靠左對齊
+label_3.grid(column=0,row=1,columnspan=3,padx=10,pady=10)
+
+label_4=Label(window,text='justify應用999555444333',width=10,heigh=5,font=('Time New Roman',10,'bold'),fg='blue',bg='yellow',            
+              wraplength=50,        #50像素後自動換行
+              justify='right')       #最後一行靠左對齊
+label_4.grid(column=3,row=1,columnspan=3,padx=10,pady=10)
+
+#relief屬性用於建立Widget控件的邊框
+relief_1=Label(window,text='flat',relief="flat")                        
+relief_1.grid(column=0,row=3,padx=2,pady=10)
+
+relief_2=Label(window,text='groove',relief="groove")                        
+relief_2.grid(column=1,row=3,padx=2,pady=10)
+
+relief_3=Label(window,text='raised',relief="raised")                        
+relief_3.grid(column=2,row=3,padx=2,pady=10)
+
+relief_4=Label(window,text='ridge',relief="ridge")                        
+relief_4.grid(column=3,row=3,padx=2,pady=10)
+
+relief_5=Label(window,text='solid',relief="solid")                        
+relief_5.grid(column=4,row=3,padx=2,pady=10)
+
+relief_6=Label(window,text='sunken',relief="sunken")                        
+relief_6.grid(column=5,row=3,padx=2,pady=10)
+
+window.mainloop()
+
+"""
+#---bitmap---
+error
+hourglass
+info
+questhead
+question
+warning
+gray12
+gray25
+gray50
+gray75
+
+#---compound---
+left圖案在左
+right圖案在右
+top圖案在上
+bottom圖案在下
+center文字覆蓋在圖案上方
+
+"""
+
