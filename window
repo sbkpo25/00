@@ -1,0 +1,26 @@
+from tkinter import *
+
+window=Tk()
+window.title('視窗標題')
+window.geometry('250x200+100+300')  #(X軸尺寸xY軸尺寸+X軸座標+Y軸座標)
+window.configure(bg='DeepSkyBlue')  #視窗顏色
+
+window.maxsize(800,800)         #設定最大視窗(寬,高)
+window.minsize(100,100)         #設定最小視窗(寬,高)
+window.resizable(True,False)    #凍結視窗大小(寬,高)
+window.iconbitmap("ghost.ico")  #變更視窗icon(須把.png轉為.ico)
+#window.overrideredirect(True)  #隱藏視窗框架(隱藏時視窗無法被移動)
+#window.state("zoomed")         #最大化視窗
+#window.iconify()               #最小化視窗
+
+window.attributes('-topmost',1)  #視窗置於最上層
+window.attributes('-alpha',0.9)  #視窗透明度(0~1)
+
+window.mainloop()
+
+
+'''
+
+#window.after(sec,command)  #自動觸發事件
+
+'''
