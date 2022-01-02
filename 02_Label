@@ -1,0 +1,28 @@
+from tkinter import *
+from PIL import Image,ImageTk
+from tkinter.ttk import Separator
+
+window=Tk()
+window.title('Label應用')
+window.geometry('340x220')
+
+#使用cursor使滑鼠移入Label中時會變化形狀
+img_gif=PhotoImage(file="QQ.gif")   #PhotoImage僅支援gif、png(不支援jpg)
+lab_gif=Label(window,image=img_gif,cursor="heart")
+lab_gif.pack()
+
+sep=Separator(window,orient=HORIZONTAL)     #Separator在tkinter.ttk模組內
+sep.pack(fill=X,padx=10,pady=5)             #填滿X軸且與視窗邊界距離10pixel
+
+#讀取jpg需使用PIL模組中的Image、ImageTk
+#讀取照片
+img_jpg=Image.open('C:/Users/user/Desktop/python/Tkinter/book/picture_test.jpg')    
+img_jpg=img_jpg.resize((img_jpg.width//2,img_jpg.height//2))   #縮小照片
+img_tk=ImageTk.PhotoImage(img_jpg)   #轉換為Tkinter圖片格式
+tex='使用compound結合文字與圖片'
+
+#宣告Label並使用compound設定圖片與文字的相對位置
+lbl=Label(window,text=tex,image=img_tk,compound="left") 
+lbl.pack()
+
+window.mainloop()
